@@ -11,7 +11,8 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:5173',  // Local development frontend
   'http://localhost:5174',  // Alternative local port
-  'https://finpath.vercel.app'  // Your production frontend URL (update this)
+  'https://finpath.vercel.app',  // Your Vercel domain
+  'https://finpath-git-main-anglerfishlyy.vercel.app'  // Add all Vercel domains
 ];
 
 app.use(cors({
