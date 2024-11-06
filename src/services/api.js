@@ -2,8 +2,8 @@ import axios from 'axios';
 
 // API URL based on environment
 const API_URL = import.meta.env.MODE === 'production'
-  ? 'https://finpath-backend.onrender.com/api'  // This will be your Render.com backend URL
-  : 'http://localhost:5000/api';
+  ? 'https://finpath-backend.onrender.com/api'  // Your actual Render URL
+  : 'http://localhost:10000/api';  // Updated port to match backend
 
 // Create axios instance
 const api = axios.create({
