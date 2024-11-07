@@ -30,52 +30,52 @@ A full-stack financial management application built with React, Node.js, and Mon
 ## ⚡ Quick Start
 
 Steps to Set Up and Run the Finpath Application
-1.Clone the Repository
-...
+
+**1.Clone the Repository**
+```
 git clone https://github.com/yourusername/finpath.git
-...
-2.Install Dependencies
+```
+**2.Install Dependencies**
 
 - Navigate to the root folder and install general dependencies:
-...
+```
 npm install
-...
+```
 - Move to the backend folder and install backend-specific dependencies:
-...
+```
 cd backend
 npm install
-...
-3.Install Frontend Packages Install the required frontend packages:
+```
+**3.Install Frontend Packages Install the required frontend packages:**
 
-...
+```
 npm install redux react-redux axios react-router-dom tailwindcss chart.js
-...
-4.Set Up the Backend
+```
+**4.Set Up the Backend**
 
 - Initialize the Node.js Project (if not done):
 
-...
+```
 mkdir finpath-backend
 cd finpath-backend
 npm init -y
-...
+```
 - Install Backend Dependencies (if needed): Make sure you’re in the finpath-backend directory and run:
 
-...
+```
 npm install
-...
-5.Run the Application
+```
+**5.Run the Application**
 
 - Start the frontend:
-...
+```
 npm run dev
-...
+```
 - Start the backend:
-...
-Copy code
+```
 cd backend
 npm start
-...
+  ```
 
 ## 🌟 Key Features Implemented
 
