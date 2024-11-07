@@ -2,29 +2,31 @@ import axios from 'axios';
 
 // API URL based on environment
 const API_URL = import.meta.env.MODE === 'production'
-  ? 'https://finpath-backend.onrender.com/api'  // Your actual Render URL
-  : 'http://localhost:10000/api';  // Updated port to match backend
+  ? 'https://finpath-backend.onrender.com/api'  // Your Render.com backend URL
+  : 'http://localhost:10000/api';
 
-// Create axios instance
+// Create axios instance with longer timeout
 const api = axios.create({
   baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 5000
+  timeout: 30000,  // Increased timeout to 30 seconds for slow cold starts
+  withCredentials: true  // Add this line
 });
 
-// Add response interceptor for error logging
+// Add better error logging
 api.interceptors.response.use(
   response => response,
   error => {
-    if (error.code === 'ECONNABORTED') {
-      console.error('Request timeout');
-    } else if (!error.response) {
-      console.error('Network error - make sure your backend is running');
-    } else {
-      console.error('API Error:', error.response?.data || error.message);
-    }
+    console.error('API Error Details:', {
+      message: error.message,
+      status: error.response?.status,
+      data: error.response?.data,
+      url: error.config?.url,
+      method: error.config?.method,
+      headers: error.config?.headers
+    });
     return Promise.reject(error);
   }
 );
