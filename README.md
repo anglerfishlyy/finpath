@@ -2,7 +2,7 @@
 
 A full-stack financial management application built with React, Node.js, and MongoDB. Helps users track expenses, manage budgets, and monitor investments with a modern, responsive interface.
 
-![FinPath Screenshot](screenshot_url)
+![FinPath Screenshot]("C:\Users\Kavya\OneDrive\Pictures\Screenshots\Screenshot (203).png")
 
 ## 🚀 Features
 
