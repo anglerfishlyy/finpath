@@ -1,6 +1,8 @@
 # FinPath - Personal Finance Management Application
 
-![FinPath Landing Page](./finpath-landing.png)
+<div align="center">
+  <img src="./assets/finpath-landing.png" alt="FinPath Landing Page" width="100%" />
+</div>
 
 A full-stack financial management application built with React, Node.js, and MongoDB. Helps users track expenses, manage budgets, and monitor investments with a modern, responsive interface.
 
