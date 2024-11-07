@@ -25,7 +25,7 @@ A full-stack financial management application built with React, Node.js, and Mon
 - Node.js & Express.js
 - MongoDB with Mongoose
 - RESTful API architecture
-- JWT authentication
+- Firebase Authentication
 
 ## ⚡ Quick Start
 
