@@ -8,19 +8,29 @@ dotenv.config();
 const app = express();
 
 // CORS configuration
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://finpath.vercel.app',
+  'https://finpath-three.vercel.app',  // Add your new Vercel domain
+  'https://finpath-git-main-anglerfishlyy.vercel.app',
+  'https://finpath-anglerfishlyy.vercel.app'
+];
+
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'http://localhost:5174',
-    'https://finpath.vercel.app',
-    'https://finpath-git-main-anglerfishlyy.vercel.app',
-    'https://finpath-anglerfishlyy.vercel.app',
-    'https://finpath-gzniboeh6-kavyas-projects-0470dcc1.vercel.app'  // Add your actual Vercel domain
-  ],
+  origin: function(origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  exposedHeaders: ['Content-Range', 'X-Content-Range']
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Add preflight handling
